@@ -63,13 +63,6 @@ class MainContainer extends Component {
       <div className="MainContainer">
        	<GetWeather />
        	<div className="WeatherToggle">
-       		<label class="switch">
-			  <input type="checkbox" />
-			  <span class="slider round">
-			  	<h2>C&deg;</h2>
-			  	<h1>F&deg;</h1>
-	  		  </span>
-			</label>
        	</div>
       </div>
     );

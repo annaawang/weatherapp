@@ -6,10 +6,7 @@ class GetForecast extends Component {
 	constructor() {
 		super();
 		this.state = {
-			currentTemp: null,
-			currentWeather: null,
-			currentIcon: null,
-			currentWind: null,
+			forecast []
 		};
 	}
 

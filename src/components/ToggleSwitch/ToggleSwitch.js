@@ -12,15 +12,16 @@ class ToggleSwitch extends Component {
 	}
 
 	render() {
-		let classNames = ["toggle", (this.state.isOn) ? "toggle-fahrenheit" : "toggle-celsius"].join(" ");
+		let onClick = this.props.onClick;
+		let classNames = ["toggle"];
+		console.log('hello');
 		return (
-			<div className={classNames}>
+			<div className={classNames} onClick={onClick}>
 				<Switch
 					isOn={this.state.isOn}
 					handleToggle={this.handleToggle.bind(this)} />
 			</div>
-
-			);
+		);
 	}
 }
 

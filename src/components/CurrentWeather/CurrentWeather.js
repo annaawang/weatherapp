@@ -6,26 +6,40 @@ import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 
 
 class GetWeather extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
+			isCelsius: false,
 			currentTemp: null,
 			currentWeather: null,
 			currentIcon: null,
 			currentWind: null,
+			forecast: []
 		};
 	}
 
+	toggleUnits() {
+		this.setState({
+			isCelsius: !this.state.isCelsius
+		});
+		console.log(this.state.isCelsius);
+	}
+
+
 	componentDidMount() {
-		const darkSky = "https://api.darksky.net/forecast/1df706274bc511d0782681ed01d839eb/32.7767,-96.7970"
-		fetch(darkSky)
+		const longitude = "32.7767"
+		const latitude = "-96.7970"
+		const darkSky = "https://api.darksky.net/forecast/1df706274bc511d0782681ed01d839eb/"
+
+		fetch(darkSky + longitude + "," + latitude)
 		.then(response => response.json())
 		.then(res => {
 			this.setState({
-				currentTemp: res.currently.apparentTemperature,
+				currentTemp: Math.round(res.currently.apparentTemperature),
 				currentWeather: res.currently.summary,
 				currentIcon: res.currently.icon,
-				currentWind: res.currently.windSpeed
+				currentWind: Math.round(res.currently.windSpeed),
+				forecast: res.daily.data
 			})
 		})
 		.catch(err => {
@@ -33,49 +47,113 @@ class GetWeather extends Component {
 		});
 	}
 
+	componentDidUpdate(prevProps, prevState) {
+		if (this.state.isCelsius !== prevState.isCelsius) {
+			const longitude = "32.7767"
+			const latitude = "-96.7970";
+
+			if (this.state.isCelsius === true) {
+				const celsius = "?units=si"
+			} else {
+				const celsius = ""
+			}
+
+			const darkSky = "https://api.darksky.net/forecast/1df706274bc511d0782681ed01d839eb/"
+
+			fetch(darkSky + longitude + "," + latitude)
+			.then(response => response.json())
+			.then(res => {
+				this.setState({
+					currentTemp: Math.round(res.currently.apparentTemperature),
+					currentWeather: res.currently.summary,
+					currentIcon: res.currently.icon,
+					currentWind: Math.round(res.currently.windSpeed),
+					forecast: res.daily.data
+				})
+			})
+			.catch(err => {
+				console.log(err);
+			});
+
+		}
+	}
+
 	render() {
+		let forecast = this.state.forecast
+		let toggleUnits = this.props.toggleUnits
+		console.log(this.state.isCelsius)
 		return (
-			<div className="MainWeather">
-				<div className="temperature">
-					<h1>{Math.round(this.state.currentTemp)}</h1>
-					<div className="degree"></div>
-				</div>
+			<div className = "MainContainer">
+				<div className="MainWeather">
+					<div className="temperature">
+						<h1>{this.state.currentTemp}</h1>
+						<div className="degree"></div>
+					</div>
 
-				<div className="icon">
-					<WeatherIcon icon={this.state.currentIcon}/>
-				</div>
+					<div className="icon">
+						<WeatherIcon icon={this.state.currentIcon}/>
+					</div>
 
-				<div className="details">
-					<h2>{this.state.currentWeather}</h2>
-			 		<h2>{Math.round(this.state.currentWind) + " " + 'mph'}</h2>
-				</div> 	
+					<div className="details">
+						<h2>{this.state.currentWeather}</h2>
+				 		<h2>{this.state.currentWind + " " + 'mph'}</h2>
+					</div> 	
+				</div>
+				<div className="WeatherToggle">
+       				<ToggleSwitch onClick={toggleUnits} />
+       			</div>
 			</div>
+			
 			);
 	}
 }
 
+// class WeatherDisplay extends Component {
+// 	constructor() {
+// 		super();
+// 		this.state = {
+// 			forecast: []
+// 		};
+// 	}
 
+// 	componentDidMount() {
+// 		const longitude = "32.7767"
+// 		const latitude = "-96.7970"
+// 		const celsius = "?units=si"
+// 		const darkSky = "https://api.darksky.net/forecast/1df706274bc511d0782681ed01d839eb/"
 
-class MainContainer extends Component {
-  render () {
-    return (
-      <div className="MainContainer">
-       	<GetWeather />
-       	<div className="WeatherToggle">
-       	<ToggleSwitch />
-       	</div>
-      </div>
-    );
-  }
-}
+// 		fetch(darkSky + longitude + "," + latitude)
+// 		.then(response => response.json())
+// 		.then(res => {
+// 			this.setState({
+// 				forecast: res.daily.data
+// 			})
+// 		})
+// 		.catch(err => {
+// 			console.log(err);
+// 		});
+// 	}
+
+// 	render() {
+// 		let forecast = this.state.forecast.slice(0, 5)
+// 		return (
+// 			<div className="WeatherDisplay">
+// 				{forecast.map(day => 
+// 					<h1>{day.icon}</h1>)}
+// 			</div>
+// 			);
+// 	}
+// }
+
 
 class CurrentWeather extends Component {
 	render () {
 		return (
 			<div className="InnerWrapper">
 		        <Background />
-		        <MainContainer />
-      		</div>)
+		        <GetWeather />
+      		</div>
+  		);
 	}
 }
 

@@ -1,0 +1,84 @@
+.toggle {
+
+}
+
+.switch {
+  margin-right: 20px;
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: #2685bd;
+  z-index: 0;
+}
+
+.switch h1 {
+  display: inline;
+  position: absolute;
+  left: 7px;
+  top: -7.5px;
+  font-size: 14px;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  z-index: 1;
+}
+
+.switch-right h1 {
+  color: white;
+}
+
+.switch-left h1 {
+  color: #2685bd;
+}
+
+.switch-right h2 {
+  color: #2685bd;
+}
+
+.switch-left h2 {
+  color: white;
+}
+
+.switch h2 {
+  display: inline;
+  position: absolute;
+  right: 3.5px;
+  top: -9px;
+  font-size: 14px;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  z-index: 1;
+}
+
+.toggle-button {
+  height: 21px;
+  width: 21px;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 0;
+}
+
+.toggle-button-right {
+  position: absolute;
+  right: 7px;
+  bottom: 2.2px;
+  -webkit-transform: translateX(5px);
+  -ms-transform: translateX(5px);
+  transform: translateX(5px);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.toggle-button-left {
+  position: absolute;
+  left: 7px;
+  bottom: 2.2px;
+  -webkit-transition: .4s;
+  transition: .4s;
+  -webkit-transform: translateX(-5px);
+  -ms-transform: translateX(-5px);
+  transform: translateX(-5px);
+}
+
+

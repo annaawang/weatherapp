@@ -52,7 +52,6 @@ class GetWeather extends Component {
 			</div>
 			);
 	}
-
 }
 
 
@@ -63,6 +62,7 @@ class MainContainer extends Component {
       <div className="MainContainer">
        	<GetWeather />
        	<div className="WeatherToggle">
+       	<ToggleSwitch />
        	</div>
       </div>
     );

@@ -7,9 +7,27 @@ import thunderstorm from '../../img/weather/thunderstorm.svg';
 
 
 class weatherIcon extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			pulse: null
+		};
+	}
+
+	setPulse(props) {
+		let isPulse = props;
+		if (isPulse) {
+			return "pulse";
+		} else {
+			return "icon-size";
+		}
+
+	}
+
     render() {
     	let iconImage = null;
-    
+    	let pulse = this.props.pulse;
+
     switch(this.props.icon){
         case('clear-day'):
             iconImage = clearDay;
@@ -48,7 +66,7 @@ class weatherIcon extends Component {
 
     	return (
     		<div class="weatherIcon">
-    			<img src={iconImage}/>
+    			<img class={this.setPulse(pulse)} src={iconImage}/>
     		</div>
 		);
     }

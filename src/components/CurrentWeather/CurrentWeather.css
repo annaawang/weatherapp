@@ -1,20 +1,28 @@
 .MainContainer {
   display: block;
+  position: relative;
   margin: auto;
   width: 100%;
-  height: 510px;
   border-radius: 3px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
-  background: url('../../img/dallas@3x.png');
   background-size: 100%;
   background-repeat: no-repeat;
 }
 
+#dallas{
+  width: 100%;
+  margin-bottom:-3px;
+}
+
 .MainWeather {
   display: inline-block;
+  position: absolute;
   width: 50%;
+  top: 0;
+  left:0;
 }
+
 
 .temperature {
   display: inline-block;
@@ -22,7 +30,6 @@
 .temperature h1 {
   display: inline-block;
   margin: 9px 0 0 28px;
-  width: 55px;
   height: 65px;
   font-family: 'Open Sans';
   font-size: 48px;
@@ -55,17 +62,154 @@
 .details h2 {
   margin: 0 0 0 12px;
   display: block;
-  width: 90px;
   font-family: OpenSans;
   font-size: 14px;
   font-weight: 600;
   color: #65aed5;
 }
 
+
 .WeatherToggle {
-  position: relative;
-  top: -10px;
+  position: absolute;
+  padding-top: 5%;
+  right: 0;
   display: inline-block;
   width: 50%;
   text-align: right;
+}
+
+
+.WeatherDisplay {
+  display:block;
+  background-color: white;
+  width: 100%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;  
+}
+
+.forecastContainer {
+  display:inline-block;
+  width: 20%;
+  text-align: center;
+  border-right: solid 1px #d8d8d8;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;  
+}
+
+.forecastContainer h1 {
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+.forecastContainer .weatherIcon img {
+  height: 38px;
+}
+
+.forecastContainer p {
+  display: inline-block;
+  margin: 5px 0 20px 0;
+  font-family: 'Open Sans';
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  
+}
+
+.tempHigh{
+  font-size: 24px;
+  color: #4a4a4a;
+  padding-right: 7px;
+}
+
+.tempLow {
+  font-size: 18px;
+  color: #7c7c7c;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .MainContainer {
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0);
+    height: 80vh;
+    text-align: center;
+  }
+
+  .WeatherToggle {
+    top: -160px;
+    right: 5px;
+  }
+
+  #dallas {
+    display: none;
+  }
+
+  .MainWeather {
+    display: block;
+    width: 100%;
+  }
+
+  .temperature {
+    display: block;
+  }
+
+  .degree {
+    position: absolute;
+    display: block;
+    width: 7px;
+    height: 7px;
+    top: 150px;
+    left: 225px;
+  }
+
+  .temperature h1 {
+    font-size: 60px;
+    font-weight: 600;
+    color: #65aed5;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 0 0 -25px;
+    top: 120px;
+  }
+
+  .details {
+    display: block;
+    position: absolute;
+    text-align: center;
+    top: 220px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+
+  .details h2 {
+    margin: 0;
+  }
+
+  .icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+
+  .WeatherDisplay {
+    padding-top: 300px;
+    background-color: rgba(0,0,0,0);
+  }
+
+  .forecastContainer {
+    background-color: white;
+    box-shadow: 0 3px 2px -1px rgba(0, 0, 0, 0.2);
+  }
 }

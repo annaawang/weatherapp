@@ -14,7 +14,6 @@ class ToggleSwitch extends Component {
 	render() {
 		let onClick = this.props.onClick;
 		let classNames = ["toggle"];
-		console.log('hello');
 		return (
 			<div className={classNames} onClick={onClick}>
 				<Switch

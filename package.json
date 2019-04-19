@@ -2,10 +2,11 @@
   "name": "test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://annaawang.github.io/weatherapp/",
+  "homepage": "https://annaawang.github.io/weatherapp/",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
+    "cors": "^2.8.5",
     "gh-pages": "^2.0.1",
     "lodash": "^4.17.11",
     "prop-types": "^15.7.2",

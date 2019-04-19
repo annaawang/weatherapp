@@ -65,8 +65,8 @@ class weatherIcon extends Component {
     }
 
     	return (
-    		<div class="weatherIcon">
-    			<img class={this.setPulse(pulse)} src={iconImage}/>
+    		<div className="weatherIcon">
+    			<img className={this.setPulse(pulse)} src={iconImage}/>
     		</div>
 		);
     }

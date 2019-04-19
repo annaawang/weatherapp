@@ -27,6 +27,7 @@ class GetWeather extends Component {
 
 
 	componentDidMount() {
+		const proxy = "https://cors-anywhere.herokuapp.com/"
 		const longitude = "32.7767"
 		const latitude = "-96.7970"
 		const darkSky = "https://api.darksky.net/forecast/1df706274bc511d0782681ed01d839eb/"
@@ -37,7 +38,7 @@ class GetWeather extends Component {
 				celsius = ""
 			}
 
-		fetch(darkSky + longitude + "," + latitude)
+		fetch(proxy + darkSky + longitude + "," + latitude)
 		.then(response => response.json())
 		.then(res => {
 			this.setState({
@@ -55,6 +56,7 @@ class GetWeather extends Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		if (this.state.isCelsius !== prevState.isCelsius) {
+			const proxy = "https://cors-anywhere.herokuapp.com/"
 			const longitude = "32.7767"
 			const latitude = "-96.7970"
 			const darkSky = "https://api.darksky.net/forecast/1df706274bc511d0782681ed01d839eb/"
@@ -65,7 +67,7 @@ class GetWeather extends Component {
 				celsius = ""
 			}
 
-			fetch(darkSky + longitude + "," + latitude + celsius)
+			fetch(proxy + darkSky + longitude + "," + latitude + celsius)
 			.then(response => response.json())
 			.then(res => {
 				this.setState({
@@ -84,7 +86,6 @@ class GetWeather extends Component {
 	}
 
 	render() {
-
 		if (!this.state.forecast.length)
 			return null;
 

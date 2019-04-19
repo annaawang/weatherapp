@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div>
         
-        <div class="OuterWrapper">
+        <div className="OuterWrapper">
           <img id="cloud-one" src={cloud} alt="cloud" />
           <img id="cloud-two" src={cloud} alt="cloud" />
           <CurrentWeather />

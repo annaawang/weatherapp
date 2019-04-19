@@ -28,8 +28,8 @@ class GetWeather extends Component {
 
 	componentDidMount() {
 		const proxy = "https://cors-anywhere.herokuapp.com/"
-		const longitude = "32.7767"
-		const latitude = "-96.7970"
+		const longitude = "29.7818416"
+		const latitude = "-95.5596132"
 		const darkSky = "https://api.darksky.net/forecast/1df706274bc511d0782681ed01d839eb/"
 		var celsius = ''
 			if (this.state.isCelsius === true) {
@@ -57,8 +57,8 @@ class GetWeather extends Component {
 	componentDidUpdate(prevProps, prevState) {
 		if (this.state.isCelsius !== prevState.isCelsius) {
 			const proxy = "https://cors-anywhere.herokuapp.com/"
-			const longitude = "32.7767"
-			const latitude = "-96.7970"
+			const longitude = "29.7818416"
+			const latitude = "-95.5596132"
 			const darkSky = "https://api.darksky.net/forecast/1df706274bc511d0782681ed01d839eb/"
 			var celsius = ''
 			if (this.state.isCelsius === true) {
@@ -89,7 +89,7 @@ class GetWeather extends Component {
 		if (!this.state.forecast.length)
 			return null;
 
-		let forecast = this.state.forecast.slice(0, 5)
+		let forecast = this.state.forecast.slice(1, 6)
 		let toggleUnits = this.toggleUnits.bind(this)
 		let windUnits = this.state.isCelsius ? 'kph' : 'mph'
 

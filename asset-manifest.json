@@ -1,5 +1,5 @@
 {
-  "main.css": "/weatherapp/static/css/main.4240a8c1.chunk.css",
+  "main.css": "/weatherapp/static/css/main.13804f11.chunk.css",
   "main.js": "/weatherapp/static/js/main.7aa5869d.chunk.js",
   "main.js.map": "/weatherapp/static/js/main.7aa5869d.chunk.js.map",
   "runtime~main.js": "/weatherapp/static/js/runtime~main.e7dc3139.js",
@@ -7,9 +7,9 @@
   "static/js/2.af93b7c8.chunk.js": "/weatherapp/static/js/2.af93b7c8.chunk.js",
   "static/js/2.af93b7c8.chunk.js.map": "/weatherapp/static/js/2.af93b7c8.chunk.js.map",
   "index.html": "/weatherapp/index.html",
-  "precache-manifest.8dd76f1ed24f893dcaf60e2491dee695.js": "/weatherapp/precache-manifest.8dd76f1ed24f893dcaf60e2491dee695.js",
+  "precache-manifest.f291488a3bf2dd06a4cddf5f05c86669.js": "/weatherapp/precache-manifest.f291488a3bf2dd06a4cddf5f05c86669.js",
   "service-worker.js": "/weatherapp/service-worker.js",
-  "static/css/main.4240a8c1.chunk.css.map": "/weatherapp/static/css/main.4240a8c1.chunk.css.map",
+  "static/css/main.13804f11.chunk.css.map": "/weatherapp/static/css/main.13804f11.chunk.css.map",
   "static/media/clear-day.svg": "/weatherapp/static/media/clear-day.6c202f5d.svg",
   "static/media/cloud.svg": "/weatherapp/static/media/cloud.e32e446d.svg",
   "static/media/dallas@3x.png": "/weatherapp/static/media/dallas@3x.6dd7ae06.png",

@@ -89,6 +89,12 @@
 }
 
 .forecastContainer {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;  
+}
+
+.forecast {
   display:inline-block;
   width: 20%;
   text-align: center;
@@ -98,18 +104,18 @@
   box-sizing: border-box;  
 }
 
-.forecastContainer h1 {
+.forecast h1 {
   font-family: 'Open Sans';
   font-size: 14px;
   font-weight: bold;
   color: #4a4a4a;
 }
 
-.forecastContainer .weatherIcon img {
+.forecast .weatherIcon img {
   height: 38px;
 }
 
-.forecastContainer p {
+.forecast p {
   display: inline-block;
   margin: 5px 0 20px 0;
   font-family: 'Open Sans';
@@ -166,7 +172,7 @@
     width: 7px;
     height: 7px;
     top: 150px;
-    left: 210px;
+    left: 215px;
   }
 
   .temperature h1 {
@@ -209,7 +215,12 @@
   }
 
   .forecastContainer {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
     background-color: white;
-    box-shadow: 0 3px 2px -1px rgba(0, 0, 0, 0.2);
+    padding: 25px 0;
+  }
+
+  .forecast {
+    border-right: 1px solid #e8e8e8;
   }
 }

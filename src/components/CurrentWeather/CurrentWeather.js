@@ -117,14 +117,16 @@ class GetWeather extends Component {
        			</div>
 
        			<div className="WeatherDisplay">
+       				<div className="forecastContainer">
 					{forecast.map(day => 
-						<div className="forecastContainer">
-							<DateInfo time={day.time} />
-							<WeatherIcon pulse={true} icon={day.icon} />
-							<p className="tempHigh">{Math.round(day.temperatureHigh)}</p>
-							<p className="tempLow">{Math.round(day.temperatureLow)}</p>
-						</div>
+							<div className="forecast">
+								<DateInfo time={day.time} />
+								<WeatherIcon pulse={true} icon={day.icon} />
+								<p className="tempHigh">{Math.round(day.temperatureHigh)}</p>
+								<p className="tempLow">{Math.round(day.temperatureLow)}</p>
+							</div>
 						)}
+					</div>
 				</div>
 			</div>
 			);

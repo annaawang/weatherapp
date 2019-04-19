@@ -69,6 +69,7 @@ body {
 
   .DisplayInfo h2 {
     color: #65aed5;
+    margin: 3px 0 0 0;
   }
 
   .DisplayInfo svg {

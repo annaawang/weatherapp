@@ -62,7 +62,7 @@
 .details h2 {
   margin: 0 0 0 12px;
   display: block;
-  font-family: OpenSans;
+  font-family: 'Open Sans';
   font-size: 14px;
   font-weight: 600;
   color: #65aed5;
@@ -166,7 +166,7 @@
     width: 7px;
     height: 7px;
     top: 150px;
-    left: 225px;
+    left: 210px;
   }
 
   .temperature h1 {

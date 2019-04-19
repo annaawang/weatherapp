@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/weatherapp/static/media/clear-day.6c202f5d.svg"
   },
   {
-    "revision": "c26b4d75265dd840972e",
+    "revision": "168f4ee950c86eeb5e8c",
     "url": "/weatherapp/static/css/main.a34156b0.chunk.css"
   },
   {
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/weatherapp/static/media/partly-cloudy-day.7b077fa1.svg"
   },
   {
-    "revision": "c26b4d75265dd840972e",
-    "url": "/weatherapp/static/js/main.bc91dc9b.chunk.js"
+    "revision": "168f4ee950c86eeb5e8c",
+    "url": "/weatherapp/static/js/main.99453b6a.chunk.js"
   },
   {
     "revision": "e32e446d885dd69c7177063a04f78286",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/weatherapp/static/media/thunderstorm.ab3021f6.svg"
   },
   {
-    "revision": "9bb47f2c049452a2b3367dccce8af161",
+    "revision": "0de8fe5e2e7847716eba340fe2de264d",
     "url": "/weatherapp/index.html"
   }
 ];
